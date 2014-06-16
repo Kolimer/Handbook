@@ -3,6 +3,8 @@ package com.newgarbo.handbook.locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
+import org.bukkit.ChatColor;
+
 import com.newgarbo.handbook.main.Handbook;
 
 public class Locale
@@ -11,11 +13,11 @@ public class Locale
 	public static final ResourceBundle LITHUANIAN_BUNDLE = ResourceBundle.getBundle("com.newgarbo.handbook.locale.lt_LT");
 	public static final ResourceBundle RUSSIAN_BUNDLE = ResourceBundle.getBundle("com.newgarbo.handbook.locale.ru_RU");
 	
-	public static String translate(String key)
+	public static String translate(String key, boolean colorCode)
 	{
 		try
 		{
-			return Handbook.instance.values.serverLanguage.bundle.getString(key);
+			return colorCode ? Handbook.instance.values.serverLanguage.bundle.getString(key).replace('&', ChatColor.COLOR_CHAR) : Handbook.instance.values.serverLanguage.bundle.getString(key);
 		}
 		catch (MissingResourceException e)
 		{
