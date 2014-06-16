@@ -11,6 +11,10 @@ import com.newgarbo.handbook.main.Handbook;
 
 public class UUIDUtils
 {
+	/**
+	 * @param uuid - UUID to get name from
+	 * @return A String(username) from the specified uuid
+	 */
 	public String getNameFromUUID(String uuid)
 	{
 		File db = new File(Handbook.instance.getDataFolder(), "uuids.database");
@@ -38,6 +42,10 @@ public class UUIDUtils
 		return "nullnullnullnullnull";
 	}
 	
+	/**
+	 * @param name - Name to get UUID from
+	 * @return A String(UUID) from the specified name
+	 */
 	public String getUUIDFromName(String name)
 	{
 		String returnable = "nullnullnullnullnull";
@@ -69,6 +77,12 @@ public class UUIDUtils
 		return returnable.substring(0, returnable.length() - 1);
 	}
 	
+	/**
+	 * Adds a new entry to the UUIDs database
+	 * 
+	 * @param uuid - UUID to add
+	 * @param name - Name to adds
+	 */
 	public void databaseAdd(String uuid, String name)
 	{
 		try

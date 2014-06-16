@@ -7,8 +7,13 @@ import com.newgarbo.handbook.utils.UUIDUtils;
 
 public class Handbook extends JavaPlugin
 {
+	/** The static instance of the plugin class */
 	public static Handbook instance = null;
+	
+	/** Permissions Handler instance */
 	public PermissionsHandler permissions;
+	
+	/** UUID Utilities instance */
 	public UUIDUtils uuid;
 	
 	@Override
