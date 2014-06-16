@@ -17,11 +17,11 @@ public class UUIDUtils
 	 */
 	public String getNameFromUUID(String uuid)
 	{
-		File db = new File(Handbook.instance.getDataFolder(), "uuids.database");
+		String returnable = "nullnullnullnullnull";
 		
 		try
 		{
-			String[] contents = FileUtil.readFile(db.getPath(), Charset.defaultCharset()).split("\n");
+			String[] contents = FileUtil.readFile(new File(Handbook.instance.getDataFolder(), "uuids.database").getPath(), Charset.defaultCharset()).split("\n");
 			
 			for (String field : contents)
 			{
@@ -30,7 +30,7 @@ public class UUIDUtils
 				
 				if (fieldUUID.substring(0, fieldUUID.length() - 1).equalsIgnoreCase(uuid))
 				{
-					return fieldName;
+					returnable = fieldName;
 				}
 			}
 		}
@@ -39,7 +39,7 @@ public class UUIDUtils
 			Bukkit.getConsoleSender().sendMessage("[Handbook] Error getting name from UUID[" + uuid + "]");
 		}
 		
-		return "nullnullnullnullnull";
+		return returnable;
 	}
 	
 	/**
@@ -50,22 +50,15 @@ public class UUIDUtils
 	{
 		String returnable = "nullnullnullnullnull";
 		
-		File db = new File(Handbook.instance.getDataFolder(), "uuids.database");
-		
 		try
 		{
-			String[] contents = FileUtil.readFile(db.getPath(), Charset.defaultCharset()).split("\n");
+			String[] contents = FileUtil.readFile(new File(Handbook.instance.getDataFolder(), "uuids.database").getPath(), Charset.defaultCharset()).split("\n");
 			
 			for (String field : contents)
 			{
 				if (field.split(":")[0].equalsIgnoreCase(name))
 				{
 					returnable = field.split(":")[1];
-					break;
-				}
-				else
-				{
-					returnable = "nullnullnullnullnull";
 				}
 			}
 		}
