@@ -1,6 +1,7 @@
 package com.newgarbo.handbook.utils;
 
 import org.bukkit.Bukkit;
+import org.bukkit.craftbukkit.v1_7_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 import com.newgarbo.handbook.locale.Locale;
@@ -24,5 +25,10 @@ public class PlayerUtils
 		}
 		
 		return Handbook.instance.playerData.vanished.contains(p.getName());
+	}
+	
+	public static boolean isOnGround(Player p)
+	{
+		return ((CraftPlayer) p).isOnGround();
 	}
 }
