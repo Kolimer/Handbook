@@ -1,0 +1,8 @@
+name: Handbook
+version: 0.1
+description: An essential plugin for any server!
+load: POSTWORLD
+author: bernhardkiv
+website: http://www.github.com/bernhardkiv
+main: com.newgarbo.handbook.main.Handbook
+prefix: Hand Book
