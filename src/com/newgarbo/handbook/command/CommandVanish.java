@@ -17,9 +17,7 @@ public class CommandVanish extends Command
 	@Override
 	protected boolean execute(CommandSender sender, org.bukkit.command.Command cmd, String label, String[] args)
 	{
-		Player p = (Player) sender;
-		
-		PlayerUtils.vanishPlayer(p, true);
+		PlayerUtils.vanishPlayer((Player) sender, true);
 		
 		return true;
 	}
