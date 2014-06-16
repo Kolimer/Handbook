@@ -13,15 +13,13 @@ public abstract class Command implements CommandExecutor
 	private List<String> aliases;
 	private String name;
 	private String permission;
-	private boolean defaultOP;
 	private boolean playerOnly;
 	
-	public Command(String permission, String name, List<String> aliases, boolean defaultOP, boolean playerOnly)
+	public Command(String permission, String name, List<String> aliases, boolean playerOnly)
 	{
 		this.permission = permission;
 		this.name = name;
 		this.aliases = aliases;
-		this.defaultOP = defaultOP;
 		this.playerOnly = playerOnly;
 	}
 	
@@ -42,7 +40,7 @@ public abstract class Command implements CommandExecutor
 		}
 		else if (arg0 instanceof Player)
 		{
-			if (((Player) arg0).hasPermission(this.getPermission()))
+			if (((Player) arg0).hasPermission(this.getPermission()) || ((Player) arg0).isOp())
 			{
 				return execute(arg0, arg1, arg2, arg3);
 			}
@@ -63,11 +61,6 @@ public abstract class Command implements CommandExecutor
 	public boolean isPlayerOnly()
 	{
 		return this.playerOnly;
-	}
-	
-	public boolean isDefaultOP()
-	{
-		return this.defaultOP;
 	}
 	
 	public String getName()

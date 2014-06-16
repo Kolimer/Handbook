@@ -3,7 +3,9 @@ package com.newgarbo.handbook.main;
 import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.newgarbo.handbook.command.CommandVanish;
 import com.newgarbo.handbook.config.Values;
+import com.newgarbo.handbook.data.PlayerData;
 import com.newgarbo.handbook.listeners.PlayerListener;
 import com.newgarbo.handbook.locale.Language;
 import com.newgarbo.handbook.permissions.PermissionsHandler;
@@ -26,6 +28,9 @@ public class Handbook extends JavaPlugin
 	/** A storage class to store configuration values */
 	public Values values;
 	
+	/** A storage class to store player data, like who's vanished, afk etc. */
+	public PlayerData playerData;
+	
 	@Override
 	public void onEnable()
 	{
@@ -34,9 +39,11 @@ public class Handbook extends JavaPlugin
 		this.permissions = new PermissionsHandler();
 		this.uuid = new UUIDUtils();
 		this.server = this.getServer();
+		this.playerData = new PlayerData();
 		
 		setup("config");
 		setup("listeners");
+		setup("commands");
 	}
 	
 	/**
@@ -60,6 +67,10 @@ public class Handbook extends JavaPlugin
 			this.values.serverLanguage = Language.valueOf(this.getConfig().getString("ServerLanguage").toUpperCase());
 			
 			this.saveConfig();
+		}
+		else if (key.equalsIgnoreCase("commands"))
+		{
+			getCommand("vanish").setExecutor(new CommandVanish());
 		}
 	}
 	
