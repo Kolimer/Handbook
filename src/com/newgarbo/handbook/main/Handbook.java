@@ -3,6 +3,7 @@ package com.newgarbo.handbook.main;
 import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.newgarbo.handbook.config.Values;
 import com.newgarbo.handbook.listeners.PlayerListener;
 import com.newgarbo.handbook.permissions.PermissionsHandler;
 import com.newgarbo.handbook.utils.UUIDUtils;
@@ -20,6 +21,9 @@ public class Handbook extends JavaPlugin
 	
 	/** The server instance */
 	private Server server;
+	
+	/** A storage class to store configuration values */
+	public Values values;
 	
 	@Override
 	public void onEnable()
@@ -41,6 +45,18 @@ public class Handbook extends JavaPlugin
 		if (key.equalsIgnoreCase("listeners"))
 		{
 			this.server.getPluginManager().registerEvents(new PlayerListener(), this);
+		}
+		else if (key.equalsIgnoreCase("config"))
+		{
+			this.getConfig().addDefault("UseCustomJoinMessage", false);
+			this.getConfig().addDefault("CustomJoinMessage", "&7[&6Join&7] &a%name% &9in &a%world%");
+			this.getConfig().addDefault("SendMotdOnJoin", true);
+			
+			this.values.customJoinMessage = this.getConfig().getBoolean("UseCustomJoinMessage");
+			this.values.joinMessage = this.getConfig().getString("CustomJoinMessage");
+			this.values.sendMotd = this.getConfig().getBoolean("SendMotdOnJoin");
+			
+			this.saveConfig();
 		}
 	}
 	
