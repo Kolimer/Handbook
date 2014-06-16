@@ -12,5 +12,6 @@ public class PlayerListener implements Listener
 	public void onPlayerJoin(PlayerJoinEvent e)
 	{
 		Handbook.instance.uuid.addEntry(e.getPlayer().getUniqueId().toString(), e.getPlayer().getName());
+	
 	}
 }

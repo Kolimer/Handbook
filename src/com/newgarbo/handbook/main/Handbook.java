@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.newgarbo.handbook.config.Values;
 import com.newgarbo.handbook.listeners.PlayerListener;
+import com.newgarbo.handbook.locale.Language;
 import com.newgarbo.handbook.permissions.PermissionsHandler;
 import com.newgarbo.handbook.utils.UUIDUtils;
 
@@ -34,6 +35,7 @@ public class Handbook extends JavaPlugin
 		this.uuid = new UUIDUtils();
 		this.server = this.getServer();
 		
+		setup("config");
 		setup("listeners");
 	}
 	
@@ -55,6 +57,7 @@ public class Handbook extends JavaPlugin
 			this.values.customJoinMessage = this.getConfig().getBoolean("UseCustomJoinMessage");
 			this.values.joinMessage = this.getConfig().getString("CustomJoinMessage");
 			this.values.sendMotd = this.getConfig().getBoolean("SendMotdOnJoin");
+			this.values.serverLanguage = Language.valueOf(this.getConfig().getString("ServerLanguage").toUpperCase());
 			
 			this.saveConfig();
 		}
