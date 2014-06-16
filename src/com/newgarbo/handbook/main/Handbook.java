@@ -1,7 +1,9 @@
 package com.newgarbo.handbook.main;
 
+import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.newgarbo.handbook.listeners.PlayerListener;
 import com.newgarbo.handbook.permissions.PermissionsHandler;
 import com.newgarbo.handbook.utils.UUIDUtils;
 
@@ -16,6 +18,9 @@ public class Handbook extends JavaPlugin
 	/** UUID Utilities instance */
 	public UUIDUtils uuid;
 	
+	/** The server instance */
+	private Server server;
+	
 	@Override
 	public void onEnable()
 	{
@@ -23,6 +28,20 @@ public class Handbook extends JavaPlugin
 		
 		this.permissions = new PermissionsHandler();
 		this.uuid = new UUIDUtils();
+		this.server = this.getServer();
+		
+		setup("listeners");
+	}
+	
+	/**
+	 * Sets up the specified object(s)
+	 */
+	private void setup(String key)
+	{
+		if (key.equalsIgnoreCase("listeners"))
+		{
+			this.server.getPluginManager().registerEvents(new PlayerListener(), this);
+		}
 	}
 	
 	@Override

@@ -83,7 +83,7 @@ public class UUIDUtils
 	 * @param uuid - UUID to add
 	 * @param name - Name to adds
 	 */
-	public void databaseAdd(String uuid, String name)
+	public void addEntry(String uuid, String name)
 	{
 		try
 		{
