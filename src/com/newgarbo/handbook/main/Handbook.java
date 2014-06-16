@@ -14,7 +14,7 @@ public class Handbook extends JavaPlugin
 	@Override
 	public void onEnable()
 	{
-		this.instance = this;
+		Handbook.instance = this;
 		
 		this.permissions = new PermissionsHandler();
 		this.uuid = new UUIDUtils();
@@ -23,7 +23,7 @@ public class Handbook extends JavaPlugin
 	@Override
 	public void onDisable()
 	{
-		this.instance = null;
+		Handbook.instance = null;
 	}
 	
 	@Override
