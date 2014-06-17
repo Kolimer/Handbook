@@ -37,7 +37,7 @@ public class CommandVanish extends Command
 			}
 			else
 			{
-				sender.sendMessage(String.format(Locale.translate("command.permission", true), this.getPermission()));
+				sender.sendMessage(String.format(Locale.translate("command.permission", true), this.getPermission() + ".others"));
 			}
 		}
 		else
