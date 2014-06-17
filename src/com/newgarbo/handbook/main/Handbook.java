@@ -7,6 +7,7 @@ import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.newgarbo.handbook.command.CommandBroadcast;
+import com.newgarbo.handbook.command.CommandFeed;
 import com.newgarbo.handbook.command.CommandFlight;
 import com.newgarbo.handbook.command.CommandHeal;
 import com.newgarbo.handbook.command.CommandPlayerInfo;
@@ -84,6 +85,7 @@ public class Handbook extends JavaPlugin
 			getCommand("broadcast").setExecutor(new CommandBroadcast());
 			getCommand("flight").setExecutor(new CommandFlight());
 			getCommand("heal").setExecutor(new CommandHeal());
+			getCommand("feed").setExecutor(new CommandFeed());
 		}
 		else if (key.equalsIgnoreCase("files"))
 		{
@@ -116,6 +118,8 @@ public class Handbook extends JavaPlugin
 			Locale.addDefault("flight.off", "&7[&eHandbook&7] &9You have now disabled flight.", Language.ENGLISH);
 			Locale.addDefault("heal", "&7[&eHandbook&7] &9You have been healed.", Language.ENGLISH);
 			Locale.addDefault("heal.other", "&7[&eHandbook&7] &9You have have healed &a%s&9.", Language.ENGLISH);
+			Locale.addDefault("feed", "&7[&eHandbook&7] &9You have have been fed.", Language.ENGLISH);
+			Locale.addDefault("feed.other", "&7[&eHandbook&7] &9You have have fed &a%s&9.", Language.ENGLISH);
 			
 			Locale.loadDefaults();
 		}

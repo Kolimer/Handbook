@@ -23,3 +23,6 @@ commands:
  heal:
   description: Heal yourself or others
   aliases: [hbheal]
+ feed:
+  description: Feed yourself!
+  aliases: [hbfeed]
