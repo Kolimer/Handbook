@@ -2,7 +2,6 @@ package com.newgarbo.handbook.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.block.BlockFace;
-import org.bukkit.craftbukkit.v1_7_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 import com.newgarbo.handbook.locale.Locale;
@@ -16,13 +15,15 @@ public class PlayerUtils
 		{
 			Handbook.instance.playerData.vanished.remove(p.getName());
 			if (inform) p.sendMessage(Locale.translate("vanish.off", true));
-			for (Player online : Bukkit.getOnlinePlayers()) online.showPlayer(p);
+			for (Player online : Bukkit.getOnlinePlayers())
+				online.showPlayer(p);
 		}
 		else
 		{
 			Handbook.instance.playerData.vanished.add(p.getName());
 			if (inform) p.sendMessage(Locale.translate("vanish.on", true));
-			for (Player online : Bukkit.getOnlinePlayers()) online.hidePlayer(p);
+			for (Player online : Bukkit.getOnlinePlayers())
+				online.hidePlayer(p);
 		}
 		
 		return Handbook.instance.playerData.vanished.contains(p.getName());

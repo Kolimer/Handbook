@@ -3,6 +3,7 @@ package com.newgarbo.handbook.main;
 import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.newgarbo.handbook.command.CommandPlayerInfo;
 import com.newgarbo.handbook.command.CommandVanish;
 import com.newgarbo.handbook.config.Values;
 import com.newgarbo.handbook.data.PlayerData;
@@ -71,6 +72,7 @@ public class Handbook extends JavaPlugin
 		else if (key.equalsIgnoreCase("commands"))
 		{
 			getCommand("vanish").setExecutor(new CommandVanish());
+			getCommand("playerinfo").setExecutor(new CommandPlayerInfo());
 		}
 	}
 	
