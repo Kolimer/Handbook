@@ -33,6 +33,7 @@ public class CommandPlayerInfo extends Command
 				sender.sendMessage(ChatColor.GOLD + "Health: " + ChatColor.RED + t.getHealth());
 				sender.sendMessage(ChatColor.GOLD + "X: " + ChatColor.RED + t.getLocation().getBlockX() + ChatColor.GOLD + ", Y: " + ChatColor.RED + t.getLocation().getBlockY() + ChatColor.GOLD + ", Z: " + ChatColor.RED + t.getLocation().getBlockZ());
 				sender.sendMessage(ChatColor.GOLD + "Pitch: " + ChatColor.RED + t.getLocation().getPitch() + ChatColor.GOLD + ", Yaw: " + ChatColor.RED + t.getLocation().getYaw());
+				sender.sendMessage(ChatColor.GOLD + "IP: " + ChatColor.RED + t.getAddress().getAddress().getHostAddress());
 			}
 			else
 			{
