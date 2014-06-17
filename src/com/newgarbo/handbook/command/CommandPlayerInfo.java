@@ -39,7 +39,8 @@ public class CommandPlayerInfo extends Command
 				sender.sendMessage(ChatColor.GOLD + "On ground: " + ChatColor.RED + PlayerUtils.isOnGround(t));
 				sender.sendMessage(ChatColor.GOLD + "Flying: " + ChatColor.RED + t.isFlying());
 				sender.sendMessage(ChatColor.GOLD + "Gamemode: " + ChatColor.RED + t.getGameMode().toString());
-			
+				sender.sendMessage(ChatColor.GOLD + "Can fly: " + ChatColor.RED + t.getAllowFlight());
+				sender.sendMessage(ChatColor.GOLD + "World: " + ChatColor.RED + t.getWorld().getName());
 			}
 			else
 			{
