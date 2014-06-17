@@ -40,9 +40,4 @@ public class CommandPlayerInfo extends Command
 		}
 		return true;
 	}
-
-	public static void main(String[] args)
-	{
-		CommandPlayerInfo
-	}
 }
