@@ -22,14 +22,21 @@ public class CommandVanish extends Command
 	{
 		if (args.length > 1)
 		{
-			if (Bukkit.getPlayer(args[0]) == null)
+			if (sender.hasPermission("commandbook.vanish.others"))
 			{
-				sender.sendMessage(Locale.translate("command.online", true));
+				if (Bukkit.getPlayer(args[0]) == null)
+				{
+					sender.sendMessage(Locale.translate("command.online", true));
+				}
+				else
+				{
+					PlayerUtils.vanishPlayer(Bukkit.getPlayer(args[0]), true);
+					sender.sendMessage(Handbook.instance.playerData.vanished.contains(args[0]) ? Locale.translate("vanish.on.other", true) : Locale.translate("vanish.off.other", true));
+				}
 			}
 			else
 			{
-				PlayerUtils.vanishPlayer(Bukkit.getPlayer(args[0]), true);
-				sender.sendMessage(Handbook.instance.playerData.vanished.contains(args[0]) ? Locale.translate("vanish.on.other", true) : Locale.translate("vanish.off.other", true));
+				sender.sendMessage(String.format(Locale.translate("command.permission", true), this.getPermission()));
 			}
 		}
 		else
