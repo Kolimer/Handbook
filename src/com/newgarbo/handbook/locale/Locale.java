@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.nio.charset.Charset;
+import java.util.HashMap;
 import java.util.MissingResourceException;
 
 import org.bukkit.ChatColor;
@@ -13,6 +14,12 @@ import com.newgarbo.handbook.utils.FileUtil;
 
 public class Locale
 {
+	/**
+	 * Implemented this translations hashmap so there doesn't have to be a file
+	 * reader for every translation request.
+	 */
+	public static HashMap<String, String> translations = new HashMap<>();
+	
 	/**
 	 * @param key - Localization key
 	 * @param colorCode - Whether or not to replace '&' with the
@@ -24,25 +31,13 @@ public class Locale
 	{
 		try
 		{
-			String toReturn = ":" + key + ":";
+			String toReturn = "";
 			
-			try
+			toReturn = translations.get(key);
+			
+			if (toReturn == null || toReturn == "null" || toReturn == "")
 			{
-				String contents = FileUtil.readFile(new File(Handbook.instance.getDataFolder(), "en_US.lang").getPath(), Charset.defaultCharset());
-				
-				for (String entry : contents.split("\n"))
-				{
-					String k = entry.split("=")[0];
-					
-					if (k.equals(key))
-					{
-						toReturn = entry.split("=")[1].substring(0, entry.split("=")[1].length() - 1);
-					}
-				}
-			}
-			catch (Exception e)
-			{
-				e.printStackTrace();
+				toReturn = key;
 			}
 			
 			return colorCode ? toReturn.replace('&', ChatColor.COLOR_CHAR) : toReturn;
@@ -55,6 +50,8 @@ public class Locale
 	
 	public static void addDefault(String key, String value, Language lang)
 	{
+		translations.put(key, value);
+		
 		try
 		{
 			if (!new File(Handbook.instance.getDataFolder(), lang.code + ".lang").exists())
@@ -67,7 +64,7 @@ public class Locale
 			if (!contents.contains(key + "="))
 			{
 				PrintWriter writer = new PrintWriter(new FileWriter(new File(Handbook.instance.getDataFolder(), lang.code + ".lang")));
-
+				
 				writer.println(key + "=" + value);
 				
 				writer.flush();
