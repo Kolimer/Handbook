@@ -1,16 +1,16 @@
 package com.newgarbo.handbook.permissions;
 
-import org.bukkit.entity.Player;
+import org.bukkit.command.CommandSender;
 
 public class PermissionsHandler
 {
 	/**
-	 * @param p - Player to check
+	 * @param sender - CommandSender to check
 	 * @param perm - Which permission to check for
 	 * @return true if the player has the specified permission
 	 */
-	public boolean has(Player p, String perm)
+	public boolean has(CommandSender sender, String perm)
 	{
-		return p.hasPermission(perm);
+		return sender.hasPermission(perm);
 	}
 }
