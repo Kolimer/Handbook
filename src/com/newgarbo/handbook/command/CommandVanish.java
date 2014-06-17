@@ -30,7 +30,7 @@ public class CommandVanish extends Command
 				}
 				else
 				{
-					sender.sendMessage(PlayerUtils.vanishPlayer(Bukkit.getPlayer(args[0]), true) ? String.format(Locale.translate("vanish.on.other", true), args[0]) : String.format(Locale.translate("vanish.off.other", true), args[0]));
+					sender.sendMessage(PlayerUtils.vanishPlayer(Bukkit.getPlayer(args[0]), true) ? String.format(Locale.translate("vanish.on.other", true), Bukkit.getPlayer(args[0]).getName()) : String.format(Locale.translate("vanish.off.other", true), Bukkit.getPlayer(args[0]).getName()));
 				}
 			}
 			else
