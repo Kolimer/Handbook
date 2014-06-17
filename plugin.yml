@@ -1,8 +1,19 @@
 name: Handbook
-version: 0.4
+version: 0.5
 description: An essential plugin for any server!
 load: POSTWORLD
 author: bernhardkiv
 website: http://www.github.com/bernhardkiv
 main: com.newgarbo.handbook.main.Handbook
 prefix: Hand Book
+
+commands:
+ vanish:
+  description: Disappear into absolute nothingness!
+  aliases: [v, va]
+ playerinfo:
+  description: Get information about a player
+  aliases: [pi, pinfo, info]
+ broadcast:
+  description: Broadcast a message to the server
+  aliases: [bc, bc, hbbroadcast]
