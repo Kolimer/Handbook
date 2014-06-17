@@ -1,5 +1,5 @@
 name: Handbook
-version: 0.6.1
+version: 0.6.2
 description: An essential plugin for any server!
 load: POSTWORLD
 author: bernhardkiv
@@ -20,3 +20,6 @@ commands:
  flight:
   description: Toggle flight for yourself or other people!
   aliases: [fly, flying, hbfly]
+ heal:
+  description: Heal yourself or others
+  aliases: [hbheal]

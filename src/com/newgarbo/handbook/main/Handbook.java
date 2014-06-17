@@ -1,15 +1,14 @@
 package com.newgarbo.handbook.main;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.newgarbo.handbook.command.CommandBroadcast;
 import com.newgarbo.handbook.command.CommandFlight;
+import com.newgarbo.handbook.command.CommandHeal;
 import com.newgarbo.handbook.command.CommandPlayerInfo;
 import com.newgarbo.handbook.command.CommandVanish;
 import com.newgarbo.handbook.config.Values;
@@ -84,6 +83,7 @@ public class Handbook extends JavaPlugin
 			getCommand("playerinfo").setExecutor(new CommandPlayerInfo());
 			getCommand("broadcast").setExecutor(new CommandBroadcast());
 			getCommand("flight").setExecutor(new CommandFlight());
+			getCommand("heal").setExecutor(new CommandHeal());
 		}
 		else if (key.equalsIgnoreCase("files"))
 		{
@@ -99,22 +99,25 @@ public class Handbook extends JavaPlugin
 				{
 					e.printStackTrace();
 				}
-				
-				Locale.addDefault("command.permission", "&7[&eHandbook&7] &9You require the permission &b%s&9 to execute this command.", Language.ENGLISH);
-				Locale.addDefault("command.playerOnly", "&7[&eHandbook&7] &9You have to be a player to execute this command.", Language.ENGLISH);
-				Locale.addDefault("vanish.on", "&7[&eHandbook&7] &9You have now been vanished.", Language.ENGLISH);
-				Locale.addDefault("vanish.off", "&7[&eHandbook&7] &9You have now been un-vanished.", Language.ENGLISH);
-				Locale.addDefault("vanish.on.other", "&7[&eHandbook&7] &9You have now vanished &a%s&9.", Language.ENGLISH);
-				Locale.addDefault("vanish.off.other", "&7[&eHandbook&7] &9You have now un-vanished &a%s&9.", Language.ENGLISH);
-				Locale.addDefault("command.online", "&7[&eHandbook&7] &9That player is not online!", Language.ENGLISH);
-				Locale.addDefault("command.args", "&7[&eHandbook&7] &9Not enough arguments! usage: &a%s&9.", Language.ENGLISH);
-				Locale.addDefault("broadcast", "&7[&eBroadcast&7] &6%s", Language.ENGLISH);
-				Locale.addDefault("flight.on.other", "&7[&eHandbook&7] &9You have now enabled flight for &a%s&9.", Language.ENGLISH);
-				Locale.addDefault("flight.off.other", "&7[&eHandbook&7] &9You have now disable flight for &a%s&9.", Language.ENGLISH);
-				Locale.addDefault("flight.on", "&7[&eHandbook&7] &9You have now enabled flight.", Language.ENGLISH);
-				Locale.addDefault("flight.off", "&7[&eHandbook&7] &9You have now disabled flight.", Language.ENGLISH);
-				
 			}
+			
+			Locale.addDefault("command.permission", "&7[&eHandbook&7] &9You require the permission &b%s&9 to execute this command.", Language.ENGLISH);
+			Locale.addDefault("command.playerOnly", "&7[&eHandbook&7] &9You have to be a player to execute this command.", Language.ENGLISH);
+			Locale.addDefault("vanish.on", "&7[&eHandbook&7] &9You have now been vanished.", Language.ENGLISH);
+			Locale.addDefault("vanish.off", "&7[&eHandbook&7] &9You have now been un-vanished.", Language.ENGLISH);
+			Locale.addDefault("vanish.on.other", "&7[&eHandbook&7] &9You have now vanished &a%s&9.", Language.ENGLISH);
+			Locale.addDefault("vanish.off.other", "&7[&eHandbook&7] &9You have now un-vanished &a%s&9.", Language.ENGLISH);
+			Locale.addDefault("command.online", "&7[&eHandbook&7] &9That player is not online!", Language.ENGLISH);
+			Locale.addDefault("command.args", "&7[&eHandbook&7] &9Not enough arguments! usage: &a%s&9.", Language.ENGLISH);
+			Locale.addDefault("broadcast", "&7[&eBroadcast&7] &6%s", Language.ENGLISH);
+			Locale.addDefault("flight.on.other", "&7[&eHandbook&7] &9You have now enabled flight for &a%s&9.", Language.ENGLISH);
+			Locale.addDefault("flight.off.other", "&7[&eHandbook&7] &9You have now disable flight for &a%s&9.", Language.ENGLISH);
+			Locale.addDefault("flight.on", "&7[&eHandbook&7] &9You have now enabled flight.", Language.ENGLISH);
+			Locale.addDefault("flight.off", "&7[&eHandbook&7] &9You have now disabled flight.", Language.ENGLISH);
+			Locale.addDefault("heal", "&7[&eHandbook&7] &9You have been healed.", Language.ENGLISH);
+			Locale.addDefault("heal.other", "&7[&eHandbook&7] &9You have have healed &a%s&9.", Language.ENGLISH);
+			
+			Locale.loadDefaults();
 		}
 	}
 	

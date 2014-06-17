@@ -1,9 +1,9 @@
 package com.newgarbo.handbook.locale;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.MissingResourceException;
 
@@ -15,10 +15,10 @@ import com.newgarbo.handbook.utils.FileUtil;
 public class Locale
 {
 	/**
-	 * Implemented this translations hashmap so there doesn't have to be a file
-	 * reader for every translation request.
+	 * A simpler way of getting localizations instead of reading the .lang file
+	 * every time the code wants to localize a string.
 	 */
-	public static HashMap<String, String> translations = new HashMap<>();
+	public static HashMap<String, String> localizations = new HashMap<>();
 	
 	/**
 	 * @param key - Localization key
@@ -31,13 +31,11 @@ public class Locale
 	{
 		try
 		{
-			String toReturn = "";
+			String toReturn = key;
 			
-			toReturn = translations.get(key);
-			
-			if (toReturn == null || toReturn == "null" || toReturn == "")
+			if (localizations.get(key) != null)
 			{
-				toReturn = key;
+				toReturn = localizations.get(key);
 			}
 			
 			return colorCode ? toReturn.replace('&', ChatColor.COLOR_CHAR) : toReturn;
@@ -48,28 +46,35 @@ public class Locale
 		}
 	}
 	
+	private static ArrayList<String> tempDefaults;
+	
 	public static void addDefault(String key, String value, Language lang)
 	{
-		translations.put(key, value);
+		if (tempDefaults == null) tempDefaults = new ArrayList<>();
 		
+		tempDefaults.add(key + "=" + value);
+		
+	}
+	
+	public static void loadDefaults()
+	{
 		try
 		{
-			if (!new File(Handbook.instance.getDataFolder(), lang.code + ".lang").exists())
+			String contents = FileUtil.readFile(new File(Handbook.instance.getDataFolder(), "en_US.lang").getPath(), Charset.defaultCharset());
+			PrintWriter writer = new PrintWriter(new File(Handbook.instance.getDataFolder(), "en_US.lang"));
+			
+			for (String entry : tempDefaults)
 			{
-				new File(Handbook.instance.getDataFolder(), lang.code + ".lang").createNewFile();
+				if (!contents.contains(entry.split("=")[0] + "="))
+				{
+					writer.println(entry.split("=")[0] + "=" + entry.split("=")[1]);
+				}
+				
+				Locale.localizations.put(entry.split("=")[0], entry.split("=")[1]);
 			}
 			
-			String contents = FileUtil.readFile(new File(Handbook.instance.getDataFolder(), lang.code + ".lang").getPath(), Charset.defaultCharset());
-			
-			if (!contents.contains(key + "="))
-			{
-				PrintWriter writer = new PrintWriter(new FileWriter(new File(Handbook.instance.getDataFolder(), lang.code + ".lang")));
-				
-				writer.println(key + "=" + value);
-				
-				writer.flush();
-				writer.close();
-			}
+			writer.flush();
+			writer.close();
 		}
 		catch (Exception e)
 		{
