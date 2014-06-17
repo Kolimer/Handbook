@@ -42,6 +42,7 @@ public class Handbook extends JavaPlugin
 		this.uuid = new UUIDUtils();
 		this.server = this.getServer();
 		this.playerData = new PlayerData();
+		this.values = new Values();
 		
 		setup("config");
 		setup("listeners");
