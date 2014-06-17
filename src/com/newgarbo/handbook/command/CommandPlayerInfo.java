@@ -13,7 +13,7 @@ public class CommandPlayerInfo extends Command
 {
 	public CommandPlayerInfo()
 	{
-		super("commandbook.playerinfo", "playerinfo", Arrays.asList("info", "pi", "pinfo"), false);
+		super("commandbook.playerinfo", "playerinfo", Arrays.asList("info", "pi", "pinfo", "hbplayerinfo"), false);
 	}
 	
 	@Override

@@ -14,7 +14,7 @@ public class CommandVanish extends Command
 {
 	public CommandVanish()
 	{
-		super("commandbook.vanish", "vanish", Arrays.asList("v", "va"), true);
+		super("commandbook.vanish", "vanish", Arrays.asList("v", "va", "hbvanish"), true);
 	}
 	
 	@Override
