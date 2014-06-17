@@ -9,6 +9,14 @@ import com.newgarbo.handbook.main.Handbook;
 
 public class PlayerUtils
 {
+	/**
+	 * Toggles vanish for the specified player.
+	 * 
+	 * @param p - Whom the code should toggle vanish for.
+	 * @param inform - Whether or not the code should send a message to the
+	 *        specified player telling them they've been vanished/un-vanished.
+	 * @return true if the specified player is currently in the vanished list.
+	 */
 	public static boolean vanishPlayer(Player p, boolean inform)
 	{
 		if (Handbook.instance.playerData.vanished.contains(p.getName()))
@@ -29,6 +37,10 @@ public class PlayerUtils
 		return Handbook.instance.playerData.vanished.contains(p.getName());
 	}
 	
+	/**
+	 * @param p - Player to check
+	 * @return true if the player is on ground
+	 */
 	public static boolean isOnGround(Player p)
 	{
 		return ((CraftPlayer) p).isOnGround();

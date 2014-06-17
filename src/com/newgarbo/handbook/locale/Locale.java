@@ -11,6 +11,13 @@ import com.newgarbo.handbook.utils.FileUtil;
 
 public class Locale
 {
+	/**
+	 * @param key - Localization key
+	 * @param colorCode - Whether or not to replace '&' with the
+	 *        ChatColor.COLOR_CHAR
+	 * @return The localized string from 'key' or just returns 'key' if there is
+	 *         no localized string for 'key'
+	 */
 	public static String translate(String key, boolean colorCode)
 	{
 		try

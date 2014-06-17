@@ -56,23 +56,44 @@ public abstract class Command implements CommandExecutor
 		}
 	}
 	
+	/**
+	 * Executes this command
+	 * 
+	 * @param sender - Sender of the command
+	 * @param cmd - The bukkit command that was sent
+	 * @param label - The command label sent
+	 * @param args - Arguments
+	 * @return true if the command was executed correctly
+	 */
 	protected abstract boolean execute(CommandSender sender, org.bukkit.command.Command cmd, String label, String[] args);
 	
+	/**
+	 * @return true if this command is only executable by a player
+	 */
 	public boolean isPlayerOnly()
 	{
 		return this.playerOnly;
 	}
 	
+	/**
+	 * @return The main name of this command.
+	 */
 	public String getName()
 	{
 		return this.name;
 	}
 	
+	/**
+	 * @return A list of Strings which are the aliases of this command
+	 */
 	public List<String> getAliases()
 	{
 		return this.aliases;
 	}
 	
+	/**
+	 * @return A string which is the required permission to execute this command
+	 */
 	public String getPermission()
 	{
 		return this.permission;
