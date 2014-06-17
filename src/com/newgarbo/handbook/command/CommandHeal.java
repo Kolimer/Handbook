@@ -7,6 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.newgarbo.handbook.locale.Locale;
+import com.newgarbo.handbook.main.Handbook;
 
 public class CommandHeal extends Command
 {
@@ -21,16 +22,23 @@ public class CommandHeal extends Command
 	{
 		if (args.length >= 1)
 		{
-			if (Bukkit.getPlayer(args[0]) != null)
+			if (Handbook.instance.permissions.has(sender, this.getPermission() + ".others"))
 			{
-				Player target = Bukkit.getPlayer(args[0]);
-				target.sendMessage(Locale.translate("heal", true));
-				sender.sendMessage(String.format(Locale.translate("heal.other", true), target.getName()));
-				target.setHealth(target.getMaxHealth());
+				if (Bukkit.getPlayer(args[0]) != null)
+				{
+					Player target = Bukkit.getPlayer(args[0]);
+					target.sendMessage(Locale.translate("heal", true));
+					sender.sendMessage(String.format(Locale.translate("heal.other", true), target.getName()));
+					target.setHealth(target.getMaxHealth());
+				}
+				else
+				{
+					sender.sendMessage(Locale.translate("command.online", true));
+				}
 			}
 			else
 			{
-				sender.sendMessage(Locale.translate("command.online", true));
+				sender.sendMessage(String.format(Locale.translate("command.permission", true), this.getPermission() + ".others"));
 			}
 		}
 		else
