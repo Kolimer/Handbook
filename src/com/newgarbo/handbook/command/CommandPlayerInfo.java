@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.newgarbo.handbook.locale.Locale;
+import com.newgarbo.handbook.utils.BooleanUtils;
 import com.newgarbo.handbook.utils.PlayerUtils;
 
 public class CommandPlayerInfo extends Command
@@ -35,11 +36,11 @@ public class CommandPlayerInfo extends Command
 				sender.sendMessage(ChatColor.GOLD + "X: " + ChatColor.RED + target.getLocation().getBlockX() + ChatColor.GOLD + ", Y: " + ChatColor.RED + target.getLocation().getBlockY() + ChatColor.GOLD + ", Z: " + ChatColor.RED + target.getLocation().getBlockZ());
 				sender.sendMessage(ChatColor.GOLD + "Pitch: " + ChatColor.RED + target.getLocation().getPitch() + ChatColor.GOLD + ", Yaw: " + ChatColor.RED + target.getLocation().getYaw());
 				sender.sendMessage(ChatColor.GOLD + "IP: " + ChatColor.RED + target.getAddress().getAddress().getHostAddress());
-				sender.sendMessage(ChatColor.GOLD + "Is OP: " + ChatColor.RED + target.isOp());
+				sender.sendMessage(ChatColor.GOLD + "Is OP: " + ChatColor.RED + BooleanUtils.friendlyName(target.isOp()));
 				sender.sendMessage(ChatColor.GOLD + "On ground: " + ChatColor.RED + PlayerUtils.isOnGround(target));
-				sender.sendMessage(ChatColor.GOLD + "Flying: " + ChatColor.RED + target.isFlying());
+				sender.sendMessage(ChatColor.GOLD + "Flying: " + ChatColor.RED + BooleanUtils.friendlyName(target.isFlying()));
 				sender.sendMessage(ChatColor.GOLD + "Gamemode: " + ChatColor.RED + target.getGameMode().toString());
-				sender.sendMessage(ChatColor.GOLD + "Can fly: " + ChatColor.RED + target.getAllowFlight());
+				sender.sendMessage(ChatColor.GOLD + "Can fly: " + ChatColor.RED + BooleanUtils.friendlyName(target.getAllowFlight()));
 				sender.sendMessage(ChatColor.GOLD + "World: " + ChatColor.RED + target.getWorld().getName());
 			}
 			else
