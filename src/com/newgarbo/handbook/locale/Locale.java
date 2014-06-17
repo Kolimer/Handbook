@@ -15,7 +15,7 @@ public class Locale
 	{
 		try
 		{
-			String toReturn = "";
+			String toReturn = ":" + key + ":";
 			
 			try
 			{
