@@ -8,6 +8,7 @@ import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.newgarbo.handbook.command.CommandBroadcast;
+import com.newgarbo.handbook.command.CommandFlight;
 import com.newgarbo.handbook.command.CommandPlayerInfo;
 import com.newgarbo.handbook.command.CommandVanish;
 import com.newgarbo.handbook.config.Values;
@@ -79,6 +80,7 @@ public class Handbook extends JavaPlugin
 			getCommand("vanish").setExecutor(new CommandVanish());
 			getCommand("playerinfo").setExecutor(new CommandPlayerInfo());
 			getCommand("broadcast").setExecutor(new CommandBroadcast());
+			getCommand("flight").setExecutor(new CommandFlight());
 		}
 		else if (key.equalsIgnoreCase("files"))
 		{
@@ -101,6 +103,10 @@ public class Handbook extends JavaPlugin
 					writer.println("command.online=&7[&eHandbook&7] &9That player is not online!");
 					writer.println("command.args=&7[&eHandbook&7] &9Not enough arguments! usage: &a%s&9.");
 					writer.println("broadcast=&7[&eBroadcast&7] &6%s");
+					writer.println("flight.on.other=&7[&eHandbook&7] &9You have now enabled flight for &a%s&9.");
+					writer.println("flight.off.other=&7[&eHandbook&7] &9You have now disable flight for &a%s&9.");
+					writer.println("flight.on=&7[&eHandbook&7] &9You have now enabled flight.");
+					writer.println("flight.off=&7[&eHandbook&7] &9You have now disabled flight.");
 					
 					writer.flush();
 					writer.close();
