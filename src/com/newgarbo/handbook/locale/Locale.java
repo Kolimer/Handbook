@@ -1,6 +1,8 @@
 package com.newgarbo.handbook.locale;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.util.MissingResourceException;
 
@@ -48,6 +50,32 @@ public class Locale
 		catch (MissingResourceException e)
 		{
 			return key;
+		}
+	}
+	
+	public static void addDefault(String key, String value, Language lang)
+	{
+		try
+		{
+			if (!new File(Handbook.instance.getDataFolder(), lang.code + ".lang").exists())
+			{
+				new File(Handbook.instance.getDataFolder(), lang.code + ".lang").createNewFile();
+			}
+			
+			String contents = FileUtil.readFile(new File(Handbook.instance.getDataFolder(), lang.code + ".lang").getPath(), Charset.defaultCharset());
+			
+			if (!contents.contains(key + "="))
+			{
+				PrintWriter writer = new PrintWriter(new FileWriter(new File(Handbook.instance.getDataFolder(), lang.code + ".lang")));
+
+				writer.println(key + "=" + value);
+				
+				writer.flush();
+				writer.close();
+			}
+		}
+		catch (Exception e)
+		{
 		}
 	}
 }

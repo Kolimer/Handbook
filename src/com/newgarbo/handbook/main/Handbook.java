@@ -2,6 +2,7 @@ package com.newgarbo.handbook.main;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import org.bukkit.Server;
@@ -14,6 +15,8 @@ import com.newgarbo.handbook.command.CommandVanish;
 import com.newgarbo.handbook.config.Values;
 import com.newgarbo.handbook.data.PlayerData;
 import com.newgarbo.handbook.listeners.PlayerListener;
+import com.newgarbo.handbook.locale.Language;
+import com.newgarbo.handbook.locale.Locale;
 import com.newgarbo.handbook.permissions.PermissionsHandler;
 import com.newgarbo.handbook.utils.UUIDUtils;
 
@@ -91,30 +94,26 @@ public class Handbook extends JavaPlugin
 				try
 				{
 					lang.createNewFile();
-
-					PrintWriter writer = new PrintWriter(new FileWriter(lang));
-
-					writer.println("command.permission=&7[&eHandbook&7] &9You require the permission &b%s&9 to execute this command.");
-					writer.println("command.playerOnly=&7[&eHandbook&7] &9You have to be a player to execute this command.");
-					writer.println("vanish.on=&7[&eHandbook&7] &9You have now been vanished.");
-					writer.println("vanish.off=&7[&eHandbook&7] &9You have now been un-vanished.");
-					writer.println("vanish.on.other=&7[&eHandbook&7] &9You have now vanished &a%s&9.");
-					writer.println("vanish.off.other=&7[&eHandbook&7] &9You have now un-vanished &a%s&9.");
-					writer.println("command.online=&7[&eHandbook&7] &9That player is not online!");
-					writer.println("command.args=&7[&eHandbook&7] &9Not enough arguments! usage: &a%s&9.");
-					writer.println("broadcast=&7[&eBroadcast&7] &6%s");
-					writer.println("flight.on.other=&7[&eHandbook&7] &9You have now enabled flight for &a%s&9.");
-					writer.println("flight.off.other=&7[&eHandbook&7] &9You have now disable flight for &a%s&9.");
-					writer.println("flight.on=&7[&eHandbook&7] &9You have now enabled flight.");
-					writer.println("flight.off=&7[&eHandbook&7] &9You have now disabled flight.");
-					
-					writer.flush();
-					writer.close();
 				}
-				catch (Exception e)
+				catch (IOException e)
 				{
 					e.printStackTrace();
 				}
+				
+				Locale.addDefault("command.permission", "&7[&eHandbook&7] &9You require the permission &b%s&9 to execute this command.", Language.ENGLISH);
+				Locale.addDefault("command.playerOnly", "&7[&eHandbook&7] &9You have to be a player to execute this command.", Language.ENGLISH);
+				Locale.addDefault("vanish.on", "&7[&eHandbook&7] &9You have now been vanished.", Language.ENGLISH);
+				Locale.addDefault("vanish.off", "&7[&eHandbook&7] &9You have now been un-vanished.", Language.ENGLISH);
+				Locale.addDefault("vanish.on.other", "&7[&eHandbook&7] &9You have now vanished &a%s&9.", Language.ENGLISH);
+				Locale.addDefault("vanish.off.other", "&7[&eHandbook&7] &9You have now un-vanished &a%s&9.", Language.ENGLISH);
+				Locale.addDefault("command.online", "&7[&eHandbook&7] &9That player is not online!", Language.ENGLISH);
+				Locale.addDefault("command.args", "&7[&eHandbook&7] &9Not enough arguments! usage: &a%s&9.", Language.ENGLISH);
+				Locale.addDefault("broadcast", "&7[&eBroadcast&7] &6%s", Language.ENGLISH);
+				Locale.addDefault("flight.on.other", "&7[&eHandbook&7] &9You have now enabled flight for &a%s&9.", Language.ENGLISH);
+				Locale.addDefault("flight.off.other", "&7[&eHandbook&7] &9You have now disable flight for &a%s&9.", Language.ENGLISH);
+				Locale.addDefault("flight.on", "&7[&eHandbook&7] &9You have now enabled flight.", Language.ENGLISH);
+				Locale.addDefault("flight.off", "&7[&eHandbook&7] &9You have now disabled flight.", Language.ENGLISH);
+				
 			}
 		}
 	}
