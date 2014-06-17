@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.newgarbo.handbook.locale.Locale;
+import com.newgarbo.handbook.utils.PlayerUtils;
 
 public class CommandPlayerInfo extends Command
 {
@@ -34,6 +35,11 @@ public class CommandPlayerInfo extends Command
 				sender.sendMessage(ChatColor.GOLD + "X: " + ChatColor.RED + t.getLocation().getBlockX() + ChatColor.GOLD + ", Y: " + ChatColor.RED + t.getLocation().getBlockY() + ChatColor.GOLD + ", Z: " + ChatColor.RED + t.getLocation().getBlockZ());
 				sender.sendMessage(ChatColor.GOLD + "Pitch: " + ChatColor.RED + t.getLocation().getPitch() + ChatColor.GOLD + ", Yaw: " + ChatColor.RED + t.getLocation().getYaw());
 				sender.sendMessage(ChatColor.GOLD + "IP: " + ChatColor.RED + t.getAddress().getAddress().getHostAddress());
+				sender.sendMessage(ChatColor.GOLD + "Is OP: " + ChatColor.RED + t.isOp());
+				sender.sendMessage(ChatColor.GOLD + "On ground: " + ChatColor.RED + PlayerUtils.isOnGround(t));
+				sender.sendMessage(ChatColor.GOLD + "Flying: " + ChatColor.RED + t.isFlying());
+				sender.sendMessage(ChatColor.GOLD + "Gamemode: " + ChatColor.RED + t.getGameMode().toString());
+			
 			}
 			else
 			{
