@@ -1,5 +1,5 @@
 name: Handbook
-version: 0.6
+version: 0.6.1
 description: An essential plugin for any server!
 load: POSTWORLD
 author: bernhardkiv
@@ -17,3 +17,6 @@ commands:
  broadcast:
   description: Broadcast a message to the server
   aliases: [bc, bc, hbbroadcast]
+ flight:
+  description: Toggle flight for yourself or other people!
+  aliases: [fly, flying, hbfly]
