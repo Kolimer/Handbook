@@ -28,20 +28,20 @@ public class CommandPlayerInfo extends Command
 			{
 				Player target = Bukkit.getPlayer(args[0]);
 				
-				sender.sendMessage(ChatColor.GOLD + "-=-=-=Displaying player info for " + ChatColor.GREEN + target.getName() + ChatColor.GOLD + "=-=-=-");
-				sender.sendMessage(ChatColor.GOLD + "UUID: " + ChatColor.RED + target.getUniqueId().toString());
-				sender.sendMessage(ChatColor.GOLD + "Display name: " + ChatColor.RED + target.getDisplayName());
-				sender.sendMessage(ChatColor.GOLD + "Hunger: " + ChatColor.RED + target.getFoodLevel());
-				sender.sendMessage(ChatColor.GOLD + "Health: " + ChatColor.RED + target.getHealth());
-				sender.sendMessage(ChatColor.GOLD + "X: " + ChatColor.RED + target.getLocation().getBlockX() + ChatColor.GOLD + ", Y: " + ChatColor.RED + target.getLocation().getBlockY() + ChatColor.GOLD + ", Z: " + ChatColor.RED + target.getLocation().getBlockZ());
-				sender.sendMessage(ChatColor.GOLD + "Pitch: " + ChatColor.RED + target.getLocation().getPitch() + ChatColor.GOLD + ", Yaw: " + ChatColor.RED + target.getLocation().getYaw());
-				sender.sendMessage(ChatColor.GOLD + "IP: " + ChatColor.RED + target.getAddress().getAddress().getHostAddress());
-				sender.sendMessage(ChatColor.GOLD + "Is OP: " + ChatColor.RED + BooleanUtils.friendlyName(target.isOp()));
-				sender.sendMessage(ChatColor.GOLD + "On ground: " + ChatColor.RED + PlayerUtils.isOnGround(target));
-				sender.sendMessage(ChatColor.GOLD + "Flying: " + ChatColor.RED + BooleanUtils.friendlyName(target.isFlying()));
-				sender.sendMessage(ChatColor.GOLD + "Gamemode: " + ChatColor.RED + target.getGameMode().toString());
-				sender.sendMessage(ChatColor.GOLD + "Can fly: " + ChatColor.RED + BooleanUtils.friendlyName(target.getAllowFlight()));
-				sender.sendMessage(ChatColor.GOLD + "World: " + ChatColor.RED + target.getWorld().getName());
+				sender.sendMessage(ChatColor.GRAY + "-=-=-=Displaying player info for " + ChatColor.YELLOW + target.getName() + ChatColor.GRAY + "=-=-=-");
+				sender.sendMessage(ChatColor.GRAY + "UUID: " + ChatColor.GREEN + target.getUniqueId().toString());
+				sender.sendMessage(ChatColor.GRAY + "Display name: " + ChatColor.GREEN + target.getDisplayName());
+				sender.sendMessage(ChatColor.GRAY + "Hunger: " + ChatColor.GREEN + target.getFoodLevel());
+				sender.sendMessage(ChatColor.GRAY + "Health: " + ChatColor.GREEN + target.getHealth());
+				sender.sendMessage(ChatColor.GRAY + "X: " + ChatColor.GREEN + target.getLocation().getBlockX() + ChatColor.GRAY + ", Y: " + ChatColor.GREEN + target.getLocation().getBlockY() + ChatColor.GRAY + ", Z: " + ChatColor.GREEN + target.getLocation().getBlockZ());
+				sender.sendMessage(ChatColor.GRAY + "Pitch: " + ChatColor.GREEN + target.getLocation().getPitch() + ChatColor.GRAY + ", Yaw: " + ChatColor.GREEN + target.getLocation().getYaw());
+				sender.sendMessage(ChatColor.GRAY + "IP: " + ChatColor.GREEN + target.getAddress().getAddress().getHostAddress());
+				sender.sendMessage(ChatColor.GRAY + "Is OP: " + ChatColor.GREEN + BooleanUtils.friendlyName(target.isOp()));
+				sender.sendMessage(ChatColor.GRAY + "On ground: " + ChatColor.GREEN + PlayerUtils.isOnGround(target));
+				sender.sendMessage(ChatColor.GRAY + "Flying: " + ChatColor.GREEN + BooleanUtils.friendlyName(target.isFlying()));
+				sender.sendMessage(ChatColor.GRAY + "Gamemode: " + ChatColor.GREEN + target.getGameMode().toString());
+				sender.sendMessage(ChatColor.GRAY + "Can fly: " + ChatColor.GREEN + BooleanUtils.friendlyName(target.getAllowFlight()));
+				sender.sendMessage(ChatColor.GRAY + "World: " + ChatColor.GREEN + target.getWorld().getName());
 			}
 			else
 			{
