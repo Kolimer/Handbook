@@ -1,7 +1,7 @@
 package com.newgarbo.handbook.utils;
 
 import org.bukkit.Bukkit;
-import org.bukkit.block.BlockFace;
+import org.bukkit.craftbukkit.v1_7_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 import com.newgarbo.handbook.locale.Locale;
@@ -31,6 +31,6 @@ public class PlayerUtils
 	
 	public static boolean isOnGround(Player p)
 	{
-		return p.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isSolid();
+		return ((CraftPlayer) p).isOnGround();
 	}
 }
