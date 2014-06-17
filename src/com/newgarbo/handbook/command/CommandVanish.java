@@ -31,7 +31,7 @@ public class CommandVanish extends Command
 				else
 				{
 					PlayerUtils.vanishPlayer(Bukkit.getPlayer(args[0]), true);
-					sender.sendMessage(Handbook.instance.playerData.vanished.contains(args[0]) ? Locale.translate("vanish.on.other", true) : Locale.translate("vanish.off.other", true));
+					sender.sendMessage(Handbook.instance.playerData.vanished.contains(args[0]) ? String.format(Locale.translate("vanish.on.other", true), args[0]) : String.format(Locale.translate("vanish.off.other", true), args[0]));
 				}
 			}
 			else
