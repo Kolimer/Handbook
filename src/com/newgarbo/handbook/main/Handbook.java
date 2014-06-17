@@ -100,10 +100,9 @@ public class Handbook extends JavaPlugin
 					writer.println("vanish.off.other=&7[&eHandbook&7] &9You have now un-vanished &a%s&9.");
 					writer.println("command.online=&7[&eHandbook&7] &9That player is not online!");
 					writer.println("command.args=&7[&eHandbook&7] &9Not enough arguments! usage: &a%s&9.");
-					writer.println("broadcast=&7[&eBroadcast&7] &6%s&6.");
-
+					writer.println("broadcast=&7[&eBroadcast&7] &6%s");
+					
 					writer.flush();
-
 					writer.close();
 				}
 				catch (Exception e)
