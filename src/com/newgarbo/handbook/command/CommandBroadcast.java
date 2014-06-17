@@ -17,7 +17,7 @@ public class CommandBroadcast extends Command
 	@Override
 	protected boolean execute(CommandSender sender, org.bukkit.command.Command cmd, String label, String[] args)
 	{
-		if (args.length > 1)
+		if (args.length > 0)
 		{
 			String message = "";
 			
