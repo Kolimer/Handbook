@@ -16,6 +16,7 @@ public class CommandPlayerInfo extends Command
 		super("commandbook.playerinfo", "playerinfo", Arrays.asList("info", "pi", "pinfo", "hbplayerinfo"), false);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	protected boolean execute(CommandSender sender, org.bukkit.command.Command cmd, String label, String[] args)
 	{

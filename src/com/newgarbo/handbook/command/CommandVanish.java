@@ -17,6 +17,7 @@ public class CommandVanish extends Command
 		super("commandbook.vanish", "vanish", Arrays.asList("v", "va", "hbvanish"), true);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	protected boolean execute(CommandSender sender, org.bukkit.command.Command cmd, String label, String[] args)
 	{
