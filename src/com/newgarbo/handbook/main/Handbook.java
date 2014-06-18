@@ -72,11 +72,11 @@ public class Handbook extends JavaPlugin
 			this.getConfig().addDefault("CustomJoinMessage", "&7[&6Join&7] &a%name% &9in &a%world%");
 			this.getConfig().addDefault("SendMotdOnJoin", true);
 			
+			this.saveDefaultConfig();
 			this.values.customJoinMessage = this.getConfig().getBoolean("UseCustomJoinMessage");
 			this.values.joinMessage = this.getConfig().getString("CustomJoinMessage");
 			this.values.sendMotd = this.getConfig().getBoolean("SendMotdOnJoin");
 			
-			this.saveConfig();
 		}
 		else if (key.equalsIgnoreCase("commands"))
 		{
@@ -89,7 +89,9 @@ public class Handbook extends JavaPlugin
 		}
 		else if (key.equalsIgnoreCase("files"))
 		{
-			File lang = new File(Handbook.instance.getDataFolder(), "en_US.lang");
+			File mutes = new File(getDataFolder(), "mutes.data");
+			
+			File lang = new File(getDataFolder(), "en_US.lang");
 			
 			if (!lang.exists())
 			{
