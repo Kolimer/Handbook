@@ -91,6 +91,18 @@ public class Handbook extends JavaPlugin
 		{
 			File mutes = new File(getDataFolder(), "mutes.data");
 			
+			if (!mutes.exists())
+			{
+				try
+				{
+					mutes.createNewFile();
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+			
 			File lang = new File(getDataFolder(), "en_US.lang");
 			
 			if (!lang.exists())
