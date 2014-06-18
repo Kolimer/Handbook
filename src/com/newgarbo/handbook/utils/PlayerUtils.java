@@ -6,7 +6,6 @@ import org.bukkit.entity.Player;
 
 import com.newgarbo.handbook.locale.Locale;
 import com.newgarbo.handbook.main.Handbook;
-import com.newgarbo.handbook.mute.MuteClient;
 
 public class PlayerUtils
 {
