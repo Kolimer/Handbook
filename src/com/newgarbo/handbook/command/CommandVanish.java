@@ -9,6 +9,9 @@ import org.bukkit.entity.Player;
 import com.newgarbo.handbook.locale.Locale;
 import com.newgarbo.handbook.utils.PlayerUtils;
 
+/**
+ * TODO: Once I get back from vacation, make /vanish (Hide to unopped players) and /opvanish (Hide to everybody)
+ */
 public class CommandVanish extends Command
 {
 	public CommandVanish()
