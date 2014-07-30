@@ -13,7 +13,7 @@ public class CommandFeed extends Command
 {
 	public CommandFeed()
 	{
-		super("commandbook.feed", "feed", Arrays.asList("hbfeed"), true);
+		super("handbook.feed", "feed", Arrays.asList("hbfeed"), true);
 	}
 	
 	@SuppressWarnings("deprecation")
