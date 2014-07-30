@@ -157,6 +157,15 @@ public class Handbook extends JavaPlugin
 		}
 	}
 	
+	/**
+	 * Returns the currently online players in a list
+	 * <p>
+	 * I'm using this "hacky" solution because Server#getOnlinePlayers(); now returns a Collection<? extends Player>
+	 * <p>
+	 * And I really don't feel like iterating through all the values, so I just made this method
+	 * 
+	 * @return An ArrayList filled with player objects of who is online.
+	 */
 	public ArrayList<Player> getOnlinePlayers()
 	{
 		ArrayList<Player> players = new ArrayList<Player>();
