@@ -16,7 +16,7 @@ public class CommandVanish extends Command
 {
 	public CommandVanish()
 	{
-		super("commandbook.vanish", "vanish", Arrays.asList("v", "va", "hbvanish"), true);
+		super("handbook.vanish", "vanish", Arrays.asList("v", "va", "hbvanish"), true);
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -25,7 +25,7 @@ public class CommandVanish extends Command
 	{
 		if (args.length >= 1)
 		{
-			if (sender.hasPermission("commandbook.vanish.others"))
+			if (sender.hasPermission("handbook.vanish.others"))
 			{
 				if (Bukkit.getPlayer(args[0]) == null)
 				{
