@@ -8,6 +8,6 @@ public class BooleanUtils
 	 */
 	public static String friendlyName(boolean flag)
 	{
-		return flag ? "yes" : "no";
+		return flag ? "Yes" : "No";
 	}
 }
