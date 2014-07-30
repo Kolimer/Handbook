@@ -135,6 +135,24 @@ public class Handbook extends JavaPlugin
 			Locale.addDefault("feed", "&7[&eHandbook&7] &9You have have been fed.", Language.ENGLISH);
 			Locale.addDefault("feed.other", "&7[&eHandbook&7] &9You have have fed &a%s&9.", Language.ENGLISH);
 			
+			Locale.addDefault("command.permission", "&7[&eHandbook&7] &9Kad daryti šita veiksmą tu turi turėti leidimą &b%s&9.", Language.LITHUANIAN);
+			Locale.addDefault("command.playerOnly", "&7[&eHandbook&7] &9Tu turi būti žmogus kad daryti šita veiksmą.", Language.LITHUANIAN);
+			Locale.addDefault("vanish.on", "&7[&eHandbook&7] &9Tu dabar ne matomas.", Language.LITHUANIAN);
+			Locale.addDefault("vanish.off", "&7[&eHandbook&7] &9Tu dabar matomas.", Language.LITHUANIAN);
+			Locale.addDefault("vanish.on.other", "&7[&eHandbook&7] &a%s&9 dabar ne matomas.", Language.LITHUANIAN);
+			Locale.addDefault("vanish.off.other", "&7[&eHandbook&7] &a%s&9 vėl matomas.", Language.LITHUANIAN);
+			Locale.addDefault("command.online", "&7[&eHandbook&7] &9Šitas žmogus nėra šio metu prisijunges!", Language.LITHUANIAN);
+			Locale.addDefault("command.args", "&7[&eHandbook&7] &9Nepakanka informacijos! Taisingas naudojimas: &a%s&9.", Language.LITHUANIAN);
+			Locale.addDefault("broadcast", "&7[&eBroadcast&7] &6%s", Language.LITHUANIAN);
+			Locale.addDefault("flight.on.other", "&7[&eHandbook&7] &a%s&9 dabar gali skraidyti.", Language.LITHUANIAN);
+			Locale.addDefault("flight.off.other", "&7[&eHandbook&7] &a%s&9 nebegali skraidyti.", Language.LITHUANIAN);
+			Locale.addDefault("flight.on", "&7[&eHandbook&7] &9Tu dabar gali skraidyti.", Language.LITHUANIAN);
+			Locale.addDefault("flight.off", "&7[&eHandbook&7] &9Tu nebegali skraidyti.", Language.LITHUANIAN);
+			Locale.addDefault("heal", "&7[&eHandbook&7] &9Tavo širdutes papildžiau.", Language.LITHUANIAN);
+			Locale.addDefault("heal.other", "&7[&eHandbook&7] &9Tu papildei &a%s&9'o širdutes.", Language.LITHUANIAN);
+			Locale.addDefault("feed", "&7[&eHandbook&7] &9Tave pamaitinau.", Language.LITHUANIAN);
+			Locale.addDefault("feed.other", "&7[&eHandbook&7] &9Tu pamaitinai &a%s&9.", Language.LITHUANIAN);
+			
 			Locale.loadDefaults();
 		}
 	}
