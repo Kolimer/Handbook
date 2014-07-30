@@ -15,7 +15,7 @@ public class CommandPlayerInfo extends Command
 {
 	public CommandPlayerInfo()
 	{
-		super("commandbook.playerinfo", "playerinfo", Arrays.asList("info", "pi", "pinfo", "hbplayerinfo"), false);
+		super("handbook.playerinfo", "playerinfo", Arrays.asList("info", "pi", "pinfo", "hbplayerinfo"), false);
 	}
 	
 	@SuppressWarnings("deprecation")
