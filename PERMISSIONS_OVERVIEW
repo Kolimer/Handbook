@@ -2,4 +2,4 @@ handbook.broadcast=Access to use /broadcast
 handbook.broadcast.color=Access to use '&' colors with /broadcast
 handbook.playerinfo=Access to use /playerinfo
 handbook.vanish=Access to use /vanish
-hanbook.vanish.others=Access to use /vanish <player>
+handbook.vanish.others=Access to use /vanish <player>
