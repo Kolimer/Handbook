@@ -13,7 +13,7 @@ public class CommandHeal extends Command
 {
 	public CommandHeal()
 	{
-		super("commandbook.heal", "heal", Arrays.asList("hbheal"), true);
+		super("handbook.heal", "heal", Arrays.asList("hbheal"), true);
 	}
 	
 	@SuppressWarnings("deprecation")
