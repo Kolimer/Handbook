@@ -56,7 +56,12 @@ public class MuteClient
 	
 	public UUID getUUIDObj()
 	{
-		return UUID.fromString(this.uuid);
+		return UUID.fromString(getUUID();
+	}
+	
+	public long getTime()
+	{
+		return this.time;
 	}
 	
 }
