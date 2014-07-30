@@ -13,7 +13,7 @@ public class CommandBroadcast extends Command
 {
 	public CommandBroadcast()
 	{
-		super("commandbook.broadcast", "broadcast", Arrays.asList("bc", "b", "hbbroadcast"), false);
+		super("handbook.broadcast", "broadcast", Arrays.asList("bc", "b", "hbbroadcast"), false);
 	}
 	
 	@Override
@@ -28,7 +28,7 @@ public class CommandBroadcast extends Command
 				message += args[i] + (i != args.length ? " " : "");
 			}
 			
-			if (Handbook.instance.permissions.has(sender, "commandbook.broadcast.color"))
+			if (Handbook.instance.permissions.has(sender, "handbook.broadcast.color"))
 			{
 				message = message.replace('&', ChatColor.COLOR_CHAR);
 			}
