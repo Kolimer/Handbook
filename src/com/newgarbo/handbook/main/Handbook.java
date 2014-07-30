@@ -169,7 +169,7 @@ public class Handbook extends JavaPlugin
 	public ArrayList<Player> getOnlinePlayers()
 	{
 		ArrayList<Player> players = new ArrayList<Player>();
-		players.addAll(this.getServer().getOnlinePlayers());
+		players.addAll(this.server.getOnlinePlayers());
 		return players;
 	}
 	
