@@ -14,7 +14,7 @@ public class CommandFlight extends Command
 {
 	public CommandFlight()
 	{
-		super("commandbook.flight", "flight", Arrays.asList("fly", "flying", "hbfly"), true);
+		super("handbook.flight", "flight", Arrays.asList("fly", "flying", "hbfly"), true);
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -23,7 +23,7 @@ public class CommandFlight extends Command
 	{
 		if (args.length >= 1)
 		{
-			if (sender.hasPermission("commandbook.flight.others"))
+			if (sender.hasPermission("handbook.flight.others"))
 			{
 				if (Bukkit.getPlayer(args[0]) == null)
 				{
