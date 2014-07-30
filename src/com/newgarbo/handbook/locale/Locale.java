@@ -75,6 +75,8 @@ public class Locale
 			
 			writer.flush();
 			writer.close();
+			
+			tempDefaults = null; // Fixes issue #2 (tempDefaults isn't used anymore after this method)
 		}
 		catch (Exception e)
 		{
