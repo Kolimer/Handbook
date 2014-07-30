@@ -2,6 +2,7 @@ name: Handbook
 version: 0.6.2
 description: An essential plugin for any server!
 author: bernhardkiv
+authors: [bernhardkiv, ZeRoyalCoder]
 website: http://www.github.com/bernhardkiv
 main: com.newgarbo.handbook.main.Handbook
 
