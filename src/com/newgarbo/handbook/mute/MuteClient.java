@@ -14,7 +14,7 @@ public class MuteClient
 	private long time;
 	
 	public boolean isMuted;
-	public boolean permanent;
+	public boolean isPermanentlyMuted;
 	
 	public MuteClient(String uuid)
 	{
@@ -22,7 +22,7 @@ public class MuteClient
 	}
 	
 	/**
-	 * Populates the 'time' value by reading from the mutes file
+	 * Populates the 'time', 'isMuted', and 'isPermanentlyMuted' values by reading from the mutes file
 	 */
 	public void populateData()
 	{
@@ -37,7 +37,7 @@ public class MuteClient
 					this.time = Long.parseLong(entry.split(":")[1]);
 					
 					if (this.time != 0) this.isMuted = true;
-					if (this.time == -1) this.permanent = true;
+					if (this.time == -1) this.isPermanentlyMuted = true;
 					
 					break;
 				}
@@ -49,16 +49,31 @@ public class MuteClient
 		}
 	}
 	
+	/**
+	 * Returns the uuid of this client.
+	 * 
+	 * @return this client's UUID.
+	 */
 	public String getUUID()
 	{
 		return this.uuid;
 	}
 	
+       /**
+	 * Returns the uuid of this client in the form of a UUID instance.
+	 * 
+	 * @return this client's UUID as a UUID object.
+	 */
 	public UUID getUUIDObj()
 	{
 		return UUID.fromString(getUUID();
 	}
 	
+	/**
+	 * Gets how long this client is muted for.
+	 * 
+	 * @return this client's muting time left.
+	 */
 	public long getTime()
 	{
 		return this.time;
