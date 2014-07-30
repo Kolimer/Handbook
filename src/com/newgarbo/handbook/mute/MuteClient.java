@@ -10,15 +10,17 @@ import com.newgarbo.handbook.utils.FileUtil;
 public class MuteClient
 {
 	private String uuid;
+	private String name;
 	
 	private long time;
 	
-	public boolean isMuted;
-	public boolean isPermanentlyMuted;
+	private boolean isMuted;
+	private boolean isPermanentlyMuted;
 	
 	public MuteClient(String uuid)
 	{
 		this.uuid = uuid;
+		this.name = UUIDUtils.getNameFromUUID(this.uuid);
 	}
 	
 	/**
@@ -50,6 +52,27 @@ public class MuteClient
 	}
 	
 	/**
+	 * Returns the client's muted state (boolean.)
+	 * 
+	 * @return true - if client is muted.
+	 */
+	public boolean isMuted()
+	{
+		return this.isMuted;
+	}
+	
+	/**
+	 * Returns whether or not the client is permanently muted.
+	 * 
+	 * @return true - if client is permanently muted.
+	 */
+	public boolean isPermMuted()
+	{
+		if (!isMuted()) return false;
+		return this.isPermanentlyMuted;
+	}
+	
+	/**
 	 * Returns the uuid of this client.
 	 * 
 	 * @return this client's UUID.
@@ -57,6 +80,16 @@ public class MuteClient
 	public String getUUID()
 	{
 		return this.uuid;
+	}
+	
+	/**
+	 * Returns the name of this client.
+	 * 
+	 * @return the client's name.
+	 */
+	public String getName()
+	{
+		return this.name;
 	}
 	
        /**
